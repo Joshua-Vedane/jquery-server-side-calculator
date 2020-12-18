@@ -1,0 +1,10 @@
+## TODOS!!! ##
+[x] Read Instructions
+[] create necessary files
+[] create UI 
+[] set up server
+[] POST math operation to server
+[] Compute math in server and store it.
+[] GET results from server
+[] Render results to DOM
+
