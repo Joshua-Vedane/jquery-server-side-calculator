@@ -1,8 +1,19 @@
 ## TODOS!!! ##
 [x] Read Instructions
-[] create necessary files
-[] create UI 
-[] set up server
+[x] create necessary files
+
+[x] create UI 
+    [x] h1 'server side calc'
+    [x] input for num1
+    [x] four buttons? for add, sub, mult, div
+    [x] input for num2
+    [x] button for submit ('=')
+    [x] clear button 
+    [x] h2 bold to display result of last operation
+    [x] ul to display all previous calculations made. 
+
+[x] set up server
+
 [] POST math operation to server
 [] Compute math in server and store it.
 [] GET results from server

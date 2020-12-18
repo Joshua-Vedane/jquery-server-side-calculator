@@ -7,11 +7,19 @@ const app = express();
 app.use(express.static('server/public'));
 app.use(bodyParser.urlencoded({extended : true}));
 
+//Store Data and functions here
 
 
 
 
 
+//End DATA AND FUNCTIONS
+
+
+//GET REQUESTS
+
+
+//POST REQUESTS
 
 
 
