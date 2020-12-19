@@ -23,13 +23,12 @@
 [x] set up server
 
 [x] POST math operation to server
-[] Compute math in server and store it.
-    [] break out the calculateResults function from POST REQUEST. takes in newCalc Object as parameter
-    [] loop over the new object
-    [] series of conditionals looking at .operator value. 
-    [] run the calc if operator matches
-    [] send the newResult into it's own variable
-    [] package the new object into receivedCalcs objects along with the result. This will be what is sent back from a GET request. 
+[x] Compute math in server and store it.
+    [x] break out the calculateResults function from POST REQUEST. takes in newCalc Object as parameter
+    [x] series of conditionals looking at .operator value. 
+    [x] run the calc if operator matches
+    [x] send the newResult into it's own variable
+    [x] package the new object into receivedCalcs objects along with the result. This will be what is sent back from a GET request. 
 [] GET results from server *After POST in handleSubmit.
 [] Render results to DOM
     [] breakout render results function after GET results

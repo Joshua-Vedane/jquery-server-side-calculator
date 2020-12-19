@@ -9,7 +9,7 @@ function handleReady(){
 }
 
 // should have syntax of {
-//     operator : 'signName',
+//     operator : 'mult',
 //     num1: 'number',
 //     num2 : 'number'
 // }
@@ -17,7 +17,8 @@ let calcObject = {};
 
 function handleOperator (){
     delete calcObject.operator;
-    let operator = $(this).data('operator');
+    let operator = $(this).data('operator'); 
+    // operator = 'add'
     console.log(operator);
     calcObject.operator = operator;
 }
@@ -41,14 +42,9 @@ function handleSubmit(){
         //get the last calculation. 
         //Get all calculations(at this point, lastCalcObject/Result still exists)
         getLastCalculation();
-        // getCalculations();
+        getCalculations();
     })
-    //render to DOM function takes in calcObject
-    // This won't work because need to keep all log of calcs in server. 
-        /*
-        <li>`${Number(calcObject.number1)} ${calcObject.operator} ${calcObject.number2} = ${response} `</li
-        
-        */
+    
 }
 
 //get last calculation and render
@@ -63,14 +59,25 @@ function getLastCalculation(){
 }
 
 //GET calculations and render to DOM
-// function getCalculations(){
-//     $.ajax({
-//         url : '/data',
-//         type : 'GET'
-//     }).then(function(response){
-//         for(let calc of response){
-                //APPEND TO DOM THE RESPONSE
-                //APPEND THE response.
-//         }
-//     })
-// }
+function getCalculations(){
+    $.ajax({
+        url : '/data',
+        type : 'GET'
+    }).then(function(response){
+        console.log(response);
+        $('#resultsOut').empty();
+        for(let item of response){
+            let itemSign = '';
+            if(item.operator === 'add'){
+                itemSign = '+';
+            }else if(item.operator === 'sub'){
+                itemSign = '-';
+            }else if (item.operator === 'mult'){
+                itemSign = 'x'
+            }else if(item.operator === 'divide'){
+                itemSign = '/'
+            }
+            $('#resultsOut').append(`<li>${item.num1} ${itemSign} ${item.num2} = ${item.result}</li>`)
+        }
+    })
+}

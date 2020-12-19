@@ -51,20 +51,19 @@ function calculateResults(newCalc){
 
 //GET REQUESTS
     //get last calc 
-    app.get('/last', (req, res) => {
-        console.log('get requested /last');
-        res.send(lastCalcResult);
-        console.log(`GET response /LAST`,lastCalcResult);
-    });
-
-
+app.get('/last', (req, res) => {
+    console.log('get requested /last');
+    res.send(lastCalcResult);
+    console.log(`GET response /LAST`,lastCalcResult);
+});
 
     //get all calcs
-// app.get('/data', (req,res) =>{
-//     console.log('get requested /data');
-//     res.send(receivedCalcs);
-//     console.log(receivedCalcs);
-// })
+
+app.get('/data', (req,res) =>{
+    console.log('get requested /data');
+    res.send(receivedCalcs);
+    console.log(receivedCalcs);
+})
 
 //POST REQUESTS
 // post calcObject
