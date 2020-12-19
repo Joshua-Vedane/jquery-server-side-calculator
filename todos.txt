@@ -6,16 +6,25 @@
     [x] h1 'server side calc'
     [x] input for num1
     [x] four buttons? for add, sub, mult, div
+        [x] give each button a data-* attr for what it does
+        [x] handle click for operator buttons
+            [x] grab the data() in those and wrap it in calcObject
     [x] input for num2
     [x] button for submit ('=')
+    [] submit Click handler
+        [] wraps values of inputs into calcObject
+        [] clear calcObject
     [x] clear button 
+    [] clear button handler 
+        [] clear user input fields 
     [x] h2 bold to display result of last operation
     [x] ul to display all previous calculations made. 
 
 [x] set up server
 
-[] POST math operation to server
+[x] POST math operation to server
 [] Compute math in server and store it.
-[] GET results from server
+[] GET results from server *After POST in handleSubmit.
 [] Render results to DOM
+    [] breakout render results function after GET results
 
