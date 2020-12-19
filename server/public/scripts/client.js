@@ -38,7 +38,9 @@ function handleSubmit(){
         data : calcObject
     }).then(function(response){
         console.log(response);
-        //GO GET THE CALCULATIONS!!!
+        //get the last calculation. 
+        //Get all calculations(at this point, lastCalcObject/Result still exists)
+        getLastCalculation();
         // getCalculations();
     })
     //render to DOM function takes in calcObject
@@ -47,6 +49,17 @@ function handleSubmit(){
         <li>`${Number(calcObject.number1)} ${calcObject.operator} ${calcObject.number2} = ${response} `</li
         
         */
+}
+
+//get last calculation and render
+function getLastCalculation(){
+    $.ajax({
+        url : '/last',
+        type : 'GET'
+    }).then(function(response){
+        console.log(response);
+        $('#lastResultOut').text(response.result);
+    });
 }
 
 //GET calculations and render to DOM

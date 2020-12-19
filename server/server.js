@@ -13,6 +13,8 @@ let lastCalcResult = {};
 let lastCalcObject = {};
 
 function calculateResults(newCalc){
+    lastCalcObject = {};
+    lastCalcResult = {};    
     //loop over new object
     //newCalc not iterable. remove for loop and just do condos
     //bring lastCalcResult into this function. add key:values to it. then, push it into receivedCalcs. 
@@ -48,6 +50,16 @@ function calculateResults(newCalc){
 
 
 //GET REQUESTS
+    //get last calc 
+    app.get('/last', (req, res) => {
+        console.log('get requested /last');
+        res.send(lastCalcResult);
+        console.log(`GET response /LAST`,lastCalcResult);
+    });
+
+
+
+    //get all calcs
 // app.get('/data', (req,res) =>{
 //     console.log('get requested /data');
 //     res.send(receivedCalcs);
@@ -66,11 +78,8 @@ app.post('/data', (req,res) => {
     //push lastCalcObject to receivedCalcs?
     console.log(`lastCalcObject is;`, lastCalcObject);
     console.log(`lastCalcResult is: `,lastCalcResult.result);
-
-
-        // these not needed once calculator function works
-    // receivedCalcs.push(newCalc);
-    // console.log(receivedCalcs);
+    receivedCalcs.push(lastCalcObject);
+    console.log(receivedCalcs);
     res.sendStatus(201);
 
 })
