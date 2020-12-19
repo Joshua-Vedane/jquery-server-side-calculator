@@ -8,6 +8,11 @@ function handleReady(){
     // $('#clear').on('click', handleClear);
 }
 
+// should have syntax of {
+//     operator : 'signName',
+//     num1: 'number',
+//     num2 : 'number'
+// }
 let calcObject = {};
 
 function handleOperator (){
@@ -34,6 +39,7 @@ function handleSubmit(){
     }).then(function(response){
         console.log(response);
         //GO GET THE CALCULATIONS!!!
+        // getCalculations();
     })
     //render to DOM function takes in calcObject
     // This won't work because need to keep all log of calcs in server. 
@@ -41,7 +47,17 @@ function handleSubmit(){
         <li>`${Number(calcObject.number1)} ${calcObject.operator} ${calcObject.number2} = ${response} `</li
         
         */
-
-
-    
 }
+
+//GET calculations and render to DOM
+// function getCalculations(){
+//     $.ajax({
+//         url : '/data',
+//         type : 'GET'
+//     }).then(function(response){
+//         for(let calc of response){
+                //APPEND TO DOM THE RESPONSE
+                //APPEND THE response.
+//         }
+//     })
+// }
