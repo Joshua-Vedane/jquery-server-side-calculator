@@ -43,6 +43,8 @@ function handleSubmit(){
         //Get all calculations(at this point, lastCalcObject/Result still exists)
         getLastCalculation();
         getCalculations();
+        //clear input fields
+        $('.numberIn').val('');
     })
     
 }
