@@ -19,19 +19,19 @@ function calculateResults(newCalc){
     //newCalc not iterable. remove for loop and just do condos
     //bring lastCalcResult into this function. add key:values to it. then, push it into receivedCalcs. 
         console.log(`newCalc in CalculateResults:`,newCalc);
-        if (newCalc.operator === 'add'){
+        if (newCalc.operator === '+'){
             let newAddCalc = Number(newCalc.num1) + Number(newCalc.num2);
             lastCalcResult.result = Number(newAddCalc);
             lastCalcObject.result = newAddCalc;
-        } else if(newCalc.operator === 'sub'){
+        } else if(newCalc.operator === '-'){
             let newSubCalc = Number(newCalc.num1) - Number(newCalc.num2);
             lastCalcResult.result = Number(newSubCalc);
             lastCalcObject.result = newSubCalc;
-        } else if(newCalc.operator === 'mult'){
+        } else if(newCalc.operator === '*'){
             let newMultCalc = Number(newCalc.num1) * Number(newCalc.num2);
             lastCalcResult.result = Number(newMultCalc);
             lastCalcObject.result = newMultCalc;
-        } else if(newCalc.operator === 'divide'){
+        } else if(newCalc.operator === '/'){
             let newDivideCalc = Number(newCalc.num1) / Number(newCalc.num2);
             lastCalcResult.result = Number(newDivideCalc);
             lastCalcObject.result = newDivideCalc;

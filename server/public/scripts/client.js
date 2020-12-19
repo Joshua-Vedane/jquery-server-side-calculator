@@ -9,7 +9,7 @@ function handleReady(){
 }
 
 // should have syntax of {
-//     operator : 'mult',
+//     operator : '*',
 //     num1: 'number',
 //     num2 : 'number'
 // }
@@ -21,6 +21,7 @@ function handleOperator (){
     // operator = 'add'
     console.log(operator);
     calcObject.operator = operator;
+    console.log(calcObject);
 }
 
 function handleSubmit(){
@@ -69,17 +70,17 @@ function getCalculations(){
         console.log(response);
         $('#resultsOut').empty();
         for(let item of response){
-            let itemSign = '';
-            if(item.operator === 'add'){
-                itemSign = '+';
-            }else if(item.operator === 'sub'){
-                itemSign = '-';
-            }else if (item.operator === 'mult'){
-                itemSign = 'x'
-            }else if(item.operator === 'divide'){
-                itemSign = '/'
+            // let itemSign = '';
+            // if(item.operator === 'add'){
+            //     itemSign = '+';
+            // }else if(item.operator === 'sub'){
+            //     itemSign = '-';
+            // }else if (item.operator === 'mult'){
+            //     itemSign = 'x'
+            // }else if(item.operator === 'divide'){
+            //     itemSign = '/'
+            $('#resultsOut').append(`<li>${item.num1} ${item.operator} ${item.num2} = ${item.result}</li>`)
             }
-            $('#resultsOut').append(`<li>${item.num1} ${itemSign} ${item.num2} = ${item.result}</li>`)
-        }
-    })
+        })
+    
 }
