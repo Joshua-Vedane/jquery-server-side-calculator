@@ -9,11 +9,30 @@ app.use(bodyParser.urlencoded({extended : true}));
 
 //Store Data and functions here
 const receivedCalcs = [];
+let lastCalcResult = {};
 
 function calculateResults(newCalc){
     //loop over new object
-    //if newCalc.operator === 'add'
-        // let newAddCalc = Number(newCalc.number1) + Number(newCalc.number2)
+    //newCalc not iterable. remove for loop and just do condos
+    // for (let calc of newCalc){
+        console.log(newCalc);
+        if (newCalc.operator === 'add'){
+            let newAddCalc = Number(newCalc.num1) + Number(newCalc.num2);
+            lastCalcResult.result = Number(newAddCalc);
+        } else if(newCalc.operator === 'sub'){
+            let newSubCalc = Number(newCalc.num1) - Number(newCalc.num2);
+            lastCalcResult.result = Number(newSubCalc);
+        } else if(newCalc.operator === 'mult'){
+            let newMultCalc = Number(newCalc.num1) * Number(newCalc.num2);
+            lastCalcResult.result = Number(newMultCalc);
+        } else if(newCalc.operator === 'divide'){
+            let newDivideCalc = Number(newCalc.num1) / Number(newCalc.num2);
+            lastCalcResult.result = Number(newDivideCalc);
+        }else{
+            console.log('something wrong');
+        }
+    // }
+   
 }
 
 
@@ -30,6 +49,7 @@ app.post('/data', (req,res) => {
     console.log('POST REQ /post', newCalc);
     //here we'll want to call a new function that takes in 'newCalc' as a parameter and do our calculations there. The result of which will be put into the receivedCalcs array or something similar
     calculateResults(newCalc);
+    console.log(lastCalcResult.result);
 
 
         // these not needed once calculator function works

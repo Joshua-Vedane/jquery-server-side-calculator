@@ -22,8 +22,8 @@ function handleSubmit(){
     //clear the calcObject numbers here
     let number1 = $('#firstNumIn').val();
     let number2 = $('#secondNumIn').val();
-    calcObject.numOne = number1;
-    calcObject.numTwo = number2;
+    calcObject.num1 = number1;
+    calcObject.num2 = number2;
     console.log(calcObject);
 
     // POST calcObject to server
