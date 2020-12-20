@@ -3,12 +3,11 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-
 app.use(express.static('server/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //Store Data and functions here
-const receivedCalcs = [];
+let receivedCalcs = [];
 
 let lastCalcObject = {};
 
@@ -54,6 +53,15 @@ app.post('/data', (req, res) => {
     // console.log(receivedCalcs);
     res.sendStatus(201);
 
+})
+
+//DELETE REQUEST
+app.delete('/delete', (req,res)=>{
+    receivedCalcs= [];
+    lastCalcObject = {};
+    // console.log(`deleted request`, receivedCalcs);
+    // console.log(`deleted request`, lastCalcObject);
+    res.sendStatus(204);
 })
 
 //ZOOM ZOOM

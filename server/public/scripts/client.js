@@ -5,6 +5,7 @@ function handleReady(){
     $('.operator').on('click', handleOperator);
     $('#submit').on('click', handleSubmit);
     $('#clear').on('click', handleClear);
+    $('#delete').on('click', handleDelete);
 }
 
 let calcObject = {};
@@ -35,12 +36,23 @@ function handleSubmit(){
         //get results 
         getCalculations();
     })
-    
 }
 
 //clear input fields
 function handleClear(){
     $('.numberIn').val('');
+    
+}
+
+//delete data from server
+function handleDelete(){
+    $.ajax({
+        url: '/delete',
+        type: 'DELETE'
+    }).then(function(response){
+        console.log(response);
+        getCalculations();
+    })
 }
 
 //GET calculations and render to DOM
@@ -51,10 +63,10 @@ function getCalculations(){
     }).then(function(response){
         // console.log(response);
         $('#resultsOut').empty();
+        $('#lastResultOut').empty();
         for(let item of response){
             $('#resultsOut').append(`<li>${item.num1} ${item.operator} ${item.num2} = ${item.result}</li>`)
             $('#lastResultOut').text(item.result);
             }
         })
-    
 }
