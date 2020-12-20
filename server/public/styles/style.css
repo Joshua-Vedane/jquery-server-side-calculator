@@ -1,0 +1,32 @@
+.container {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #456789;
+    color: #f4f4f4;
+}
+
+.btn {
+    padding: 5px 10px;
+    border: none
+}
+.btn:hover {
+    cursor: pointer;
+}
+
+.inputField > * {
+    margin-left: 5px;
+}
+.numberIn{
+    padding: 5px 10px;
+}
+
+#lastResultOut {
+    margin-left: 1.5rem;
+}
+
+#resultsOut{
+    list-style: circle;
+    line-height: 1.5;
+    font-size: 1.3rem;
+    padding-left: 5rem;
+   
+}
