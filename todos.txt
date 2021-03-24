@@ -5,7 +5,7 @@
 [x] create UI 
     [x] h1 'server side calc'
     [x] input for num1
-    [x] four buttons? for add, sub, mult, div
+    [x] four buttons? for add, sub, mult, div (changed to symbol)
         [x] give each button a data-* attr for what it does
         [x] handle click for operator buttons
             [x] grab the data() in those and wrap it in calcObject
@@ -29,7 +29,6 @@
     [x] run the calc if operator matches
     [x] send the newResult into it's own variable
     [x] package the new object into receivedCalcs objects along with the result. This will be what is sent back from a GET request. 
-[] GET results from server *After POST in handleSubmit.
-[] Render results to DOM
-    [] breakout render results function after GET results
+[x] GET results from server *After POST in handleSubmit.
+[x] Render results to DOM
 

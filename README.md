@@ -6,7 +6,9 @@ This is a basic server-side calculator that can handle the four basic mathematic
 
 This program is built with JavaScript. The client side uses jQuery and Ajax to display data to the DOM and also to communicate with the server. 
 
-The server is built with Javascript. It also utilizes Ajax as well as express and bodyParser. 
+To spin this up locally, in the terminal run 'npm start' and open your browser to 'localhost:5000'
+
+### Date Completed: 20 December 2020
 
 
 
