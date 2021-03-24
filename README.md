@@ -16,4 +16,4 @@ To spin this up locally, in the terminal run 'npm start' and open your browser t
 
 
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+
